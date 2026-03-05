@@ -1,0 +1,381 @@
+/* =========================================
+   RESET Y VARIABLES (Estilo Bootstrap)
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Tipografía moderna nativa similar a Bootstrap */
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f7f6; /* Fondo gris muy claro */
+    color: #333;
+    line-height: 1.5;
+}
+
+/* =========================================
+   ENCABEZADO Y NAVEGACIÓN (Diseño Original)
+   ========================================= */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%; /* Más espacio a los lados, como en la imagen */
+    background-color: transparent; /* Fondo transparente para que se integre */
+    /* Eliminamos bordes y sombras para un look más limpio */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* El logo "C" azul simulado con CSS */
+.logo-icon {
+    width: 28px;
+    height: 28px;
+    border: 5px solid #0d6efd; /* Azul brillante */
+    border-right-color: transparent; /* Crea la forma de "C" */
+    border-radius: 50%;
+    transform: rotate(45deg); /* Inclinación sutil */
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    color: #1a202c; /* Color oscuro para el texto */
+    font-weight: 400;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem; /* Mayor separación entre los enlaces */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #1a202c; /* Texto oscuro */
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: #0d6efd;
+}
+
+/* El enlace activo (CONTACTO) en azul */
+.main-nav a.active {
+    color: #0d6efd;
+}
+
+/* =========================================
+   PIE DE PÁGINA (FOOTER) MODERNO
+   ========================================= */
+.main-footer {
+    background-color: #ffffff;
+    padding: 2.5rem 5%;
+    margin-top: 5rem;
+    color: #4a5568;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(13, 110, 253, 0.1); /* Línea superior azul muy sutil */
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-brand {
+    font-size: 1.1rem;
+    color: #1a202c;
+}
+
+.programmer-info {
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.heart-icon {
+    color: #e53e3e;
+    animation: heartbeat 1.5s infinite; /* Un pequeño latido opcional */
+}
+
+/* Animación de latido para el corazón */
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #f7fafc;
+    color: #4a5568;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #0d6efd;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(13, 110, 253, 0.2);
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Un pequeño truco CSS para simular el logo de tu wireframe */
+.logo-icon {
+    width: 28px;
+    height: 28px;
+    border: 3px solid #495057;
+    border-radius: 50%;
+    border-left-color: transparent;
+}
+
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #212529;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #495057;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.main-nav a:hover {
+    color: #0d6efd; /* Azul Bootstrap */
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+   ========================================= */
+.main-content {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+/* =========================================
+   CONTENEDOR DEL FORMULARIO
+   ========================================= */
+.form-section {
+    background: #ffffff;
+    max-width: 650px;
+    margin: 0 auto;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05); /* Sombra suave estilo Bootstrap */
+    overflow: hidden;
+    text-align: left;
+}
+
+.form-header {
+    background-color: #e3f2fd; /* Azul muy claro del wireframe */
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid #90caf9;
+}
+
+.form-header h2 {
+    font-size: 1.25rem;
+    color: #1e3a8a;
+    margin: 0;
+    font-weight: 400;
+}
+
+.contact-form {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espaciado entre grupos usando Box Model/Flex */
+}
+
+/* =========================================
+   ELEMENTOS DEL FORMULARIO
+   ========================================= */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* El contenedor que agrupa el input y el icono */
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #6cb2eb; /* Borde azul claro */
+    border-radius: 2rem; /* Bordes muy redondeados tipo "píldora" */
+    background-color: #ffffff;
+    padding: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Estado Focus: El "brillo" estilo Bootstrap cuando haces clic */
+.input-wrapper:focus-within {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    background-color: #8198b1; /* Color gris/azul del icono del wireframe */
+    border-radius: 50%;
+    color: white;
+    flex-shrink: 0;
+    margin-right: 0.75rem;
+}
+
+/* Inputs y Textareas */
+.input-wrapper input,
+.input-wrapper textarea {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    padding: 0.5rem 1rem 0.5rem 0;
+    font-size: 1rem;
+    color: #212529;
+    outline: none; /* Quitamos el outline nativo porque usamos el del wrapper */
+}
+
+/* Ajustes específicos para el área de texto */
+.textarea-wrapper {
+    border-radius: 1.5rem;
+    align-items: flex-start;
+}
+
+.textarea-wrapper .icon-container {
+    margin-top: 0.25rem; /* Alinea el icono arriba */
+}
+
+.input-wrapper textarea {
+    resize: vertical; /* Permite cambiar el tamaño solo hacia abajo */
+    min-height: 80px;
+    margin-top: 0.5rem;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO (Adaptación a móviles)
+   ========================================= */
+
+/* Pantallas medianas (Tablets, menos de 768px) */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column; /* Apila el logo y el menú */
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap; /* Permite que los enlaces bajen de línea si no caben */
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .page-title {
+        font-size: 2rem; /* Achica un poco el título principal */
+        margin-bottom: 1.5rem;
+    }
+
+    .form-section {
+        margin: 0 1rem; /* Asegura que el formulario no toque los bordes de la pantalla */
+    }
+}
+
+/* Pantallas pequeñas (Celulares, menos de 480px) */
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.5rem; /* Letra aún más pequeña para celulares */
+    }
+
+    .form-header {
+        padding: 1rem;
+    }
+
+    .form-header h2 {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .contact-form {
+        padding: 1.5rem 1rem; /* Reduce el espacio interno del formulario */
+    }
+
+    /* Hace los iconos y los inputs un poco más compactos */
+    .icon-container {
+        width: 34px;
+        height: 34px;
+        margin-right: 0.5rem;
+    }
+
+    .input-wrapper input,
+    .input-wrapper textarea {
+        font-size: 0.95rem;
+    }
+}
