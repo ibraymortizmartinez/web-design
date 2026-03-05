@@ -1,381 +1,200 @@
-/* =========================================
-   RESET Y VARIABLES (Estilo Bootstrap)
-   ========================================= */
+/* --- RESET Y VARIABLES --- */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    /* Tipografía moderna nativa similar a Bootstrap */
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f4f7f6; /* Fondo gris muy claro */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f6fafe;
     color: #333;
-    line-height: 1.5;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+
+    /*background-image: url('/assets/img/fondo2.jpg'); 
+    
+    /* Propiedades para que la imagen se ajuste correctamente */
+    background-size: cover;       /* Cubre toda la pantalla */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se duplique */
+    background-attachment: fixed; /* La imagen se queda quieta al hacer scroll */
+   
+    font-family: 'Segoe UI', sans-serif;
+    /* Ajuste de la imagen de fondo */
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                url('/assets/img/fondo2.jpg') no-repeat center center / cover fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
 }
 
-/* =========================================
-   ENCABEZADO Y NAVEGACIÓN (Diseño Original)
-   ========================================= */
+/* --- DECORACIÓN DE FONDO --- */
+.bg-shape {
+    position: absolute;
+    background: radial-gradient(circle, #cfe9ff 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(20px);
+}
+.shape-1 { width: 500px; height: 500px; top: -150px; left: -150px; opacity: 0.6; }
+.shape-2 { width: 400px; height: 400px; top: 10%; right: -100px; opacity: 0.4; }
+.shape-3 { width: 300px; height: 300px; bottom: 5%; left: 10%; opacity: 0.3; }
+
+/* --- HEADER --- */
 .main-header {
+    width: 100%;
+    padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 5%; /* Más espacio a los lados, como en la imagen */
-    background-color: transparent; /* Fondo transparente para que se integre */
-    /* Eliminamos bordes y sombras para un look más limpio */
+    background: rgba(246, 250, 254, 0.8);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
+.logo-container { display: flex; align-items: center; gap: 12px; }
+.logo-icon { width: 28px; height: 28px; background: #007bff; border-radius: 8px; transform: rotate(45deg); }
+.logo-text { font-size: 22px; color: #0c1a40; letter-spacing: -0.5px; }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+.main-nav ul { list-style: none; display: flex; gap: 35px; }
+.main-nav a { text-decoration: none; color: #555; font-size: 14px; font-weight: 700; transition: 0.3s; text-transform: uppercase; }
+.main-nav a:hover, .main-nav a.active { color: #007bff; }
 
-/* El logo "C" azul simulado con CSS */
-.logo-icon {
-    width: 28px;
-    height: 28px;
-    border: 5px solid #0d6efd; /* Azul brillante */
-    border-right-color: transparent; /* Crea la forma de "C" */
-    border-radius: 50%;
-    transform: rotate(45deg); /* Inclinación sutil */
-}
-
-.logo-text {
-    font-size: 1.4rem;
-    color: #1a202c; /* Color oscuro para el texto */
-    font-weight: 400;
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2.5rem; /* Mayor separación entre los enlaces */
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: #1a202c; /* Texto oscuro */
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: color 0.2s ease;
-}
-
-.main-nav a:hover {
-    color: #0d6efd;
-}
-
-/* El enlace activo (CONTACTO) en azul */
-.main-nav a.active {
-    color: #0d6efd;
-}
-
-/* =========================================
-   PIE DE PÁGINA (FOOTER) MODERNO
-   ========================================= */
-.main-footer {
-    background-color: #ffffff;
-    padding: 2.5rem 5%;
-    margin-top: 5rem;
-    color: #4a5568;
-    font-size: 0.95rem;
-    border-top: 1px solid rgba(13, 110, 253, 0.1); /* Línea superior azul muy sutil */
-}
-
-.footer-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.footer-brand {
-    font-size: 1.1rem;
-    color: #1a202c;
-}
-
-.programmer-info {
-    color: #4a5568;
-    font-weight: 500;
-}
-
-.heart-icon {
-    color: #e53e3e;
-    animation: heartbeat 1.5s infinite; /* Un pequeño latido opcional */
-}
-
-/* Animación de latido para el corazón */
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.15); }
-}
-
-.social-links {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background-color: #f7fafc;
-    color: #4a5568;
-    border-radius: 50%;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    background-color: #0d6efd;
-    color: #ffffff;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 6px rgba(13, 110, 253, 0.2);
-}
-
-/* Ajustes responsivos para pantallas pequeñas */
-@media (max-width: 768px) {
-    .main-header {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1.5rem;
-    }
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Un pequeño truco CSS para simular el logo de tu wireframe */
-.logo-icon {
-    width: 28px;
-    height: 28px;
-    border: 3px solid #495057;
-    border-radius: 50%;
-    border-left-color: transparent;
-}
-
-.logo-text {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #212529;
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: #495057;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.2s ease-in-out;
-}
-
-.main-nav a:hover {
-    color: #0d6efd; /* Azul Bootstrap */
-}
-
-/* =========================================
-   CONTENIDO PRINCIPAL
-   ========================================= */
+/* --- CONTENIDO PRINCIPAL --- */
 .main-content {
-    max-width: 900px;
-    margin: 3rem auto;
-    padding: 0 1rem;
-    text-align: center;
+    padding: 130px 20px 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .page-title {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 2.5rem;
-    font-weight: 400;
+    font-size: 42px;
+    color: #0c1a40;
+    margin-bottom: 45px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* =========================================
-   CONTENEDOR DEL FORMULARIO
-   ========================================= */
+/* --- TARJETA DEL FORMULARIO --- */
 .form-section {
     background: #ffffff;
-    max-width: 650px;
-    margin: 0 auto;
-    border: 1px solid #dee2e6;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05); /* Sombra suave estilo Bootstrap */
+    width: 100%;
+    max-width: 680px;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.07);
     overflow: hidden;
-    text-align: left;
+
 }
 
 .form-header {
-    background-color: #e3f2fd; /* Azul muy claro del wireframe */
-    padding: 1.25rem 2rem;
-    border-bottom: 1px solid #90caf9;
-}
-
-.form-header h2 {
-    font-size: 1.25rem;
-    color: #1e3a8a;
-    margin: 0;
-    font-weight: 400;
-}
-
-.contact-form {
-    padding: 2rem;
+    background: linear-gradient(90deg, #0c1a40 0%, #3a5af1 100%);
+    color: white;
+    padding: 20px 35px;
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem; /* Espaciado entre grupos usando Box Model/Flex */
+    align-items: center;
+    gap: 15px;
 }
+.form-header i { font-size: 22px; }
+.form-header h2 { font-size: 18px; font-weight: 600; letter-spacing: 0.5px; }
 
-/* =========================================
-   ELEMENTOS DEL FORMULARIO
-   ========================================= */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
+.contact-form { padding: 45px; display: flex; flex-direction: column; gap: 22px; }
 
-.form-group label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #495057;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
+.form-group { display: flex; flex-direction: column; gap: 10px; }
+.form-group label { font-size: 14px; font-weight: 700; color: #444; }
 
-/* El contenedor que agrupa el input y el icono */
 .input-wrapper {
     display: flex;
     align-items: center;
-    border: 1px solid #6cb2eb; /* Borde azul claro */
-    border-radius: 2rem; /* Bordes muy redondeados tipo "píldora" */
-    background-color: #ffffff;
-    padding: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Estado Focus: El "brillo" estilo Bootstrap cuando haces clic */
+
 .input-wrapper:focus-within {
-    border-color: #86b7fe;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: #007bff;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(0,123,255,0.1);
 }
 
-.icon-container {
+.icon-container { padding: 14px 22px; color: #64748b; border-right: 1px solid #e2e8f0; font-size: 18px; }
+
+.input-wrapper input, .input-wrapper textarea {
+    flex: 1; border: none; padding: 14px 20px; background: transparent; outline: none; font-size: 15px; color: #1e293b;
+}
+
+/* --- BOTÓN ENVIAR --- */
+.btn-submit {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 38px;
-    height: 38px;
-    background-color: #8198b1; /* Color gris/azul del icono del wireframe */
+    gap: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+    transition: 0.3s;
+    margin-top: 10px;
+}
+.btn-submit:hover { transform: translateY(-3px); background: #006ae0; box-shadow: 0 12px 25px rgba(0, 123, 255, 0.4); }
+
+/* --- FOOTER --- */
+/* --- FOOTER ESTILO IMAGEN 1 --- */
+.main-footer {
+    margin-top: auto; /* Empuja el footer siempre al final */
+    width: 100%;
+    padding: 20px 8%;
+    background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.footer-left {
+    font-size: 14px;
+    color: #475569;
+}
+
+/* --- BOTONES SOCIALES CIRCULARES --- */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background: #ffffff;
+    color: #0c1a40;
     border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra para que "floten" */
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.social-button:hover {
+    background: #007bff;
     color: white;
-    flex-shrink: 0;
-    margin-right: 0.75rem;
-}
-
-/* Inputs y Textareas */
-.input-wrapper input,
-.input-wrapper textarea {
-    flex-grow: 1;
-    border: none;
-    background: transparent;
-    padding: 0.5rem 1rem 0.5rem 0;
-    font-size: 1rem;
-    color: #212529;
-    outline: none; /* Quitamos el outline nativo porque usamos el del wrapper */
-}
-
-/* Ajustes específicos para el área de texto */
-.textarea-wrapper {
-    border-radius: 1.5rem;
-    align-items: flex-start;
-}
-
-.textarea-wrapper .icon-container {
-    margin-top: 0.25rem; /* Alinea el icono arriba */
-}
-
-.input-wrapper textarea {
-    resize: vertical; /* Permite cambiar el tamaño solo hacia abajo */
-    min-height: 80px;
-    margin-top: 0.5rem;
-}
-
-/* =========================================
-   DISEÑO RESPONSIVO (Adaptación a móviles)
-   ========================================= */
-
-/* Pantallas medianas (Tablets, menos de 768px) */
-@media (max-width: 768px) {
-    .main-header {
-        flex-direction: column; /* Apila el logo y el menú */
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-    .main-nav ul {
-        flex-wrap: wrap; /* Permite que los enlaces bajen de línea si no caben */
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .page-title {
-        font-size: 2rem; /* Achica un poco el título principal */
-        margin-bottom: 1.5rem;
-    }
-
-    .form-section {
-        margin: 0 1rem; /* Asegura que el formulario no toque los bordes de la pantalla */
-    }
-}
-
-/* Pantallas pequeñas (Celulares, menos de 480px) */
-@media (max-width: 480px) {
-    .page-title {
-        font-size: 1.5rem; /* Letra aún más pequeña para celulares */
-    }
-
-    .form-header {
-        padding: 1rem;
-    }
-
-    .form-header h2 {
-        font-size: 1.1rem;
-        text-align: center;
-    }
-
-    .contact-form {
-        padding: 1.5rem 1rem; /* Reduce el espacio interno del formulario */
-    }
-
-    /* Hace los iconos y los inputs un poco más compactos */
-    .icon-container {
-        width: 34px;
-        height: 34px;
-        margin-right: 0.5rem;
-    }
-
-    .input-wrapper input,
-    .input-wrapper textarea {
-        font-size: 0.95rem;
-    }
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
 }
