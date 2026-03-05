@@ -7,24 +7,15 @@
 
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f6fafe;
     color: #333;
     overflow-x: hidden;
     position: relative;
-    min-height: 100vh;
-
-    /*background-image: url('/assets/img/fondo2.jpg'); */
     
-    /* Propiedades para que la imagen se ajuste correctamente */
-    background-size: cover;       /* Cubre toda la pantalla */
-    background-position: center;  /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se duplique */
-    background-attachment: fixed; /* La imagen se queda quieta al hacer scroll */
-   
-    font-family: 'Segoe UI', sans-serif;
-    /* Ajuste de la imagen de fondo */
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
-                url('assets/img/fondo2.jpg') no-repeat center center / cover fixed;
+    /* Ajuste de la imagen de fondo con opacidad al 30% y RUTA CORRECTA */
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
+                url('../img/fondo2.jpg') no-repeat center center / cover fixed;
+    background-color: #f6fafe; /* Color de respaldo */
+    
     min-height: 100vh;
     display: flex;
     flex-direction: column;
