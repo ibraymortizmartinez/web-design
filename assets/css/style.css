@@ -24,7 +24,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
     /* Ajuste de la imagen de fondo */
     background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
-                url('../assets/img/fondo2.jpg') no-repeat center center / cover fixed;
+                url('assets/img/fondo2.jpg') no-repeat center center / cover fixed;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
